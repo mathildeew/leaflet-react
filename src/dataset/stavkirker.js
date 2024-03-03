@@ -1,7 +1,18 @@
 export const stavkirker = [
   {
+    id: 29,
+    kategori: "Nedbrent",
+    navn: "Fantoft",
+    kommune: "Bergen",
+    fylke: "Vestland",
+    byggeår: "1170",
+    funksjon: "Brant ned til grunnen 6. juni 1992.",
+    koordinater: [60.33940395167574, 5.353300726393529],
+  },
+
+  {
     id: 28,
-    kirke: "Rødven",
+    navn: "Rødven",
     kommune: "Rauma",
     fylke: "Møre og Romsdal",
     byggeår: "Ca. 1200 ",
@@ -10,7 +21,7 @@ export const stavkirker = [
   },
   {
     id: 27,
-    kirke: "Uvdal",
+    navn: "Uvdal",
     kommune: "Nore og Uvdal",
     fylke: "Viken",
     byggeår: "Etter 1168",
@@ -19,7 +30,7 @@ export const stavkirker = [
   },
   {
     id: 26,
-    kirke: "Torpo",
+    navn: "Torpo",
     kommune: "Ål",
     fylke: "Viken",
     byggeår: "Etter 1192",
@@ -28,7 +39,7 @@ export const stavkirker = [
   },
   {
     id: 25,
-    kirke: "Rollag",
+    navn: "Rollag",
     kommune: "Rollag",
     fylke: "Viken",
     byggeår: "Før 1482",
@@ -37,7 +48,7 @@ export const stavkirker = [
   },
   {
     id: 24,
-    kirke: "Nore",
+    navn: "Nore",
     kommune: "Nore og Uvdal",
     fylke: "Viken",
     byggeår: "Etter 1166-67",
@@ -46,7 +57,7 @@ export const stavkirker = [
   },
   {
     id: 23,
-    kirke: "Gol",
+    navn: "Gol",
     kommune: "Gol, nå på Norsk Folkemuseum i Oslo",
     fylke: "Viken",
     byggeår: "Etter 1216",
@@ -55,7 +66,7 @@ export const stavkirker = [
   },
   {
     id: 22,
-    kirke: "Flesberg",
+    navn: "Flesberg",
     kommune: "Flesberg",
     fylke: "Viken",
     byggeår: "Etter 1111",
@@ -64,7 +75,7 @@ export const stavkirker = [
   },
   {
     id: 21,
-    kirke: "Røldal",
+    navn: "Røldal",
     kommune: "Odda",
     fylke: "Vestland",
     byggeår: "1200-tallet",
@@ -73,7 +84,7 @@ export const stavkirker = [
   },
   {
     id: 20,
-    kirke: "Urnes",
+    navn: "Urnes",
     kommune: "Luster",
     fylke: "Vestland",
     byggeår: "1130",
@@ -82,7 +93,7 @@ export const stavkirker = [
   },
   {
     id: 19,
-    kirke: "Undredal",
+    navn: "Undredal",
     kommune: "Aurland",
     fylke: "Vestland",
     byggeår: "1147",
@@ -91,7 +102,7 @@ export const stavkirker = [
   },
   {
     id: 18,
-    kirke: "Kaupanger",
+    navn: "Kaupanger",
     kommune: "Sogndal",
     fylke: "Vestland",
     byggeår: "Ca. 1190",
@@ -100,7 +111,7 @@ export const stavkirker = [
   },
   {
     id: 17,
-    kirke: "Hopperstad",
+    navn: "Hopperstad",
     kommune: "Vik",
     fylke: "Vestland",
     byggeår: "Ca. 1130",
@@ -109,7 +120,7 @@ export const stavkirker = [
   },
   {
     id: 16,
-    kirke: "Borgund",
+    navn: "Borgund",
     kommune: "Lærdal",
     fylke: "Vestland",
     byggeår: "1150-1200",
@@ -118,7 +129,7 @@ export const stavkirker = [
   },
   {
     id: 15,
-    kirke: "Haltdalen",
+    navn: "Haltdalen",
     kommune: "Holtålen, nå på Trøndelag Folkemuseum i Trondheim",
     fylke: "Trøndelag",
     byggeår: "1170",
@@ -127,7 +138,7 @@ export const stavkirker = [
   },
   {
     id: 14,
-    kirke: "Høyjord",
+    navn: "Høyjord",
     kommune: "Sandefjord",
     fylke: "Vestfold og Telemark",
     byggeår: "1200-tallet",
@@ -136,7 +147,7 @@ export const stavkirker = [
   },
   {
     id: 13,
-    kirke: "Heddal",
+    navn: "Heddal",
     kommune: "Notodden",
     fylke: "Vestfold og Telemark",
     byggeår: "1200-tallet",
@@ -145,7 +156,7 @@ export const stavkirker = [
   },
   {
     id: 12,
-    kirke: "Eidsborg",
+    navn: "Eidsborg",
     kommune: "Tokke",
     fylke: "Vestfold og Telemark",
     byggeår: "1200-tallet",
@@ -154,7 +165,7 @@ export const stavkirker = [
   },
   {
     id: 11,
-    kirke: "Kvernes",
+    navn: "Kvernes",
     kommune: "Averøy",
     fylke: "Møre og Romsdal",
     byggeår: "1633",
@@ -163,7 +174,7 @@ export const stavkirker = [
   },
   {
     id: 10,
-    kirke: "Grip",
+    navn: "Grip",
     kommune: "Kristiansund",
     fylke: "Møre og Romsdal",
     byggeår: "1450-1500",
@@ -172,7 +183,7 @@ export const stavkirker = [
   },
   {
     id: 9,
-    kirke: "Øye",
+    navn: "Øye",
     kommune: "Vang",
     fylke: "Innlandet",
     byggeår: "Ca. 1200",
@@ -181,7 +192,7 @@ export const stavkirker = [
   },
   {
     id: 8,
-    kirke: "Ringebu",
+    navn: "Ringebu",
     kommune: "Ringebu",
     fylke: "Innlandet",
     byggeår: "1220",
@@ -190,7 +201,7 @@ export const stavkirker = [
   },
   {
     id: 7,
-    kirke: "Reinli",
+    navn: "Reinli",
     kommune: "Sør-Aurdal",
     fylke: "Innlandet",
     byggeår: "Etter 1326",
@@ -199,7 +210,7 @@ export const stavkirker = [
   },
   {
     id: 6,
-    kirke: "Garmo",
+    navn: "Garmo",
     kommune: "Lom, nå på Maihaugen",
     fylke: "Innlandet",
     byggeår: "1157/58",
@@ -208,7 +219,7 @@ export const stavkirker = [
   },
   {
     id: 5,
-    kirke: "Hedalen",
+    navn: "Hedalen",
     kommune: "Sør-Aurdal",
     fylke: "Innlandet",
     byggeår: "1150-1200",
@@ -217,7 +228,7 @@ export const stavkirker = [
   },
   {
     id: 4,
-    kirke: "Hegge",
+    navn: "Hegge",
     kommune: "Øystre Slidre",
     fylke: "Innlandet",
     byggeår: "Etter 1216",
@@ -226,7 +237,7 @@ export const stavkirker = [
   },
   {
     id: 3,
-    kirke: "Høre",
+    navn: "Høre",
     kommune: "Vang",
     fylke: "Innlandet",
     byggeår: "1180",
@@ -236,7 +247,7 @@ export const stavkirker = [
 
   {
     id: 2,
-    kirke: "Lom",
+    navn: "Lom",
     kommune: "Lom",
     fylke: "Innlandet",
     byggeår: "1150-1200",
@@ -245,7 +256,7 @@ export const stavkirker = [
   },
   {
     id: 1,
-    kirke: "Lomen",
+    navn: "Lomen",
     kommune: "Vestre Slidre",
     fylke: "Innlandet",
     byggeår: "Treverk fra 1179",
