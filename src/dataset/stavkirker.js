@@ -17,7 +17,7 @@ export const stavkirker = [
     navn: "Rødven",
     kommune: "Rauma",
     fylke: "Møre og Romsdal",
-    byggeår: "Ca. 1200 ",
+    byggeår: "Ca. 1200",
     funksjon: "",
     koordinater: [60.69787552275933, 8.94758608035402],
   },

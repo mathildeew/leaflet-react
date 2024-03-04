@@ -6,6 +6,10 @@ export default function App() {
   const [kirker, setKirker] = useState(stavkirker);
   const [searched, setSearched] = useState("");
 
+  function onSearch(e) {
+    setSearched(e.target.value);
+  }
+
   useEffect(() => {
     const filteredKirker = stavkirker.filter((kirke) =>
       kirke.navn.toLowerCase().includes(searched.toLowerCase())
@@ -14,10 +18,6 @@ export default function App() {
     setKirker(filteredKirker);
   }, [searched]);
 
-  function onSearch(e) {
-    setSearched(e.target.value);
-  }
-
   return (
     <main>
       <div className="hero">
@@ -25,6 +25,7 @@ export default function App() {
       </div>
       <section className="container">
         <input
+          name="search"
           placeholder="Søk"
           type="search"
           onChange={onSearch}

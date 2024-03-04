@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -8,14 +9,10 @@ import {
 } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useState } from "react";
 
 export default function LeafletMap({ data }) {
   const kirker = data;
-  const [visibleLayers, setVisibleLayers] = useState([
-    "Bevarte",
-    "Tapte kirke",
-  ]);
+  const [layers, setLayers] = useState(["Bevarte", "Tapte kirke"]);
 
   const mapOptions = {
     center: [61.145215741610265, 8.995954311118219],
@@ -41,18 +38,33 @@ export default function LeafletMap({ data }) {
     popupAnchor: [0, -20],
   });
 
+  const getCategoryIcon = (kategori) => {
+    if (kategori === "Nedbrent") {
+      return burnedIcon;
+    } else {
+      return churchIcon;
+    }
+  };
+
+  const kirkerWithIcon = kirker.map((kirke) => {
+    return {
+      ...kirke,
+      icon: getCategoryIcon(kirke.kategori),
+    };
+  });
+
   return (
     <div>
       <MapContainer {...mapOptions} style={mapStyle}>
         <LayersControl position="topright">
-          {visibleLayers.map((layerName) => (
+          {layers.map((layerName) => (
             <LayersControl.Overlay
               key={layerName}
               checked={layerName === "Bevarte"}
               name={layerName}
             >
               <LayerGroup>
-                {kirker
+                {kirkerWithIcon
                   .filter(
                     (kirke) => kirke.eksisterer === (layerName === "Bevarte")
                   )
@@ -60,7 +72,7 @@ export default function LeafletMap({ data }) {
                     <Marker
                       key={kirke.id}
                       position={kirke.koordinater}
-                      icon={kirke.eksisterer ? churchIcon : burnedIcon}
+                      icon={kirke.icon}
                     >
                       <Popup>
                         <h2>{kirke.navn} stavkirke</h2>
