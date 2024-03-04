@@ -1,15 +1,32 @@
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  LayersControl,
+  LayerGroup,
+} from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useState } from "react";
 
-export default function LeafletMap(data) {
-  const { data: kirker } = data;
+export default function LeafletMap({ data }) {
+  const kirker = data;
+  const [visibleLayers, setVisibleLayers] = useState([
+    "Bevarte",
+    "Tapte kirke",
+  ]);
 
   const mapOptions = {
     center: [61.145215741610265, 8.995954311118219],
     zoom: 0,
     maxZoom: 18,
     minZoom: 5,
+  };
+
+  const mapStyle = {
+    width: "auto",
+    height: "500px",
   };
 
   const churchIcon = new Icon({
@@ -24,37 +41,40 @@ export default function LeafletMap(data) {
     popupAnchor: [0, -20],
   });
 
-  const getCategoryIcon = (kategori) => {
-    if (kategori === "Nedbrent") {
-      return burnedIcon;
-    } else {
-      return churchIcon;
-    }
-  };
-
-  const kirkeArray = kirker.map((kirke) => {
-    return {
-      ...kirke,
-      icon: getCategoryIcon(kirke.kategori),
-    };
-  });
-
-  console.log(kirkeArray);
-
   return (
     <div>
-      <MapContainer {...mapOptions} style={{ width: "auto", height: "500px" }}>
+      <MapContainer {...mapOptions} style={mapStyle}>
+        <LayersControl position="topright">
+          {visibleLayers.map((layerName) => (
+            <LayersControl.Overlay
+              key={layerName}
+              checked={layerName === "Bevarte"}
+              name={layerName}
+            >
+              <LayerGroup>
+                {kirker
+                  .filter(
+                    (kirke) => kirke.eksisterer === (layerName === "Bevarte")
+                  )
+                  .map((kirke) => (
+                    <Marker
+                      key={kirke.id}
+                      position={kirke.koordinater}
+                      icon={kirke.eksisterer ? churchIcon : burnedIcon}
+                    >
+                      <Popup>
+                        <h2>{kirke.navn} stavkirke</h2>
+                        <p>Byggeår: {kirke.byggeår}</p>
+                        <p>Kommune: {kirke.kommune}</p>
+                        {kirke.funksjon && <p>{kirke.funksjon}</p>}
+                      </Popup>
+                    </Marker>
+                  ))}
+              </LayerGroup>
+            </LayersControl.Overlay>
+          ))}
+        </LayersControl>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        {kirkeArray.map((kirke) => (
-          <Marker key={kirke.id} position={kirke.koordinater} icon={kirke.icon}>
-            <Popup>
-              <h2>{kirke.navn} stavkirke</h2>
-              <p>Byggeår: {kirke.byggeår}</p>
-              <p>Kommune: {kirke.kommune}</p>
-              {kirke.funksjon && <p>{kirke.funksjon}</p>}
-            </Popup>
-          </Marker>
-        ))}
       </MapContainer>
     </div>
   );

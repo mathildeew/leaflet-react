@@ -1,6 +1,7 @@
 export const stavkirker = [
   {
     id: 29,
+    eksisterer: false,
     kategori: "Nedbrent",
     navn: "Fantoft",
     kommune: "Bergen",
@@ -12,6 +13,7 @@ export const stavkirker = [
 
   {
     id: 28,
+    eksisterer: true,
     navn: "Rødven",
     kommune: "Rauma",
     fylke: "Møre og Romsdal",
@@ -21,6 +23,7 @@ export const stavkirker = [
   },
   {
     id: 27,
+    eksisterer: true,
     navn: "Uvdal",
     kommune: "Nore og Uvdal",
     fylke: "Viken",
@@ -30,6 +33,7 @@ export const stavkirker = [
   },
   {
     id: 26,
+    eksisterer: true,
     navn: "Torpo",
     kommune: "Ål",
     fylke: "Viken",
@@ -39,6 +43,7 @@ export const stavkirker = [
   },
   {
     id: 25,
+    eksisterer: true,
     navn: "Rollag",
     kommune: "Rollag",
     fylke: "Viken",
@@ -48,6 +53,7 @@ export const stavkirker = [
   },
   {
     id: 24,
+    eksisterer: true,
     navn: "Nore",
     kommune: "Nore og Uvdal",
     fylke: "Viken",
@@ -57,6 +63,7 @@ export const stavkirker = [
   },
   {
     id: 23,
+    eksisterer: true,
     navn: "Gol",
     kommune: "Gol, nå på Norsk Folkemuseum i Oslo",
     fylke: "Viken",
@@ -66,6 +73,7 @@ export const stavkirker = [
   },
   {
     id: 22,
+    eksisterer: true,
     navn: "Flesberg",
     kommune: "Flesberg",
     fylke: "Viken",
@@ -75,6 +83,7 @@ export const stavkirker = [
   },
   {
     id: 21,
+    eksisterer: true,
     navn: "Røldal",
     kommune: "Odda",
     fylke: "Vestland",
@@ -84,6 +93,7 @@ export const stavkirker = [
   },
   {
     id: 20,
+    eksisterer: true,
     navn: "Urnes",
     kommune: "Luster",
     fylke: "Vestland",
@@ -93,6 +103,7 @@ export const stavkirker = [
   },
   {
     id: 19,
+    eksisterer: true,
     navn: "Undredal",
     kommune: "Aurland",
     fylke: "Vestland",
@@ -102,6 +113,7 @@ export const stavkirker = [
   },
   {
     id: 18,
+    eksisterer: true,
     navn: "Kaupanger",
     kommune: "Sogndal",
     fylke: "Vestland",
@@ -111,6 +123,7 @@ export const stavkirker = [
   },
   {
     id: 17,
+    eksisterer: true,
     navn: "Hopperstad",
     kommune: "Vik",
     fylke: "Vestland",
@@ -120,6 +133,7 @@ export const stavkirker = [
   },
   {
     id: 16,
+    eksisterer: true,
     navn: "Borgund",
     kommune: "Lærdal",
     fylke: "Vestland",
@@ -129,6 +143,7 @@ export const stavkirker = [
   },
   {
     id: 15,
+    eksisterer: true,
     navn: "Haltdalen",
     kommune: "Holtålen, nå på Trøndelag Folkemuseum i Trondheim",
     fylke: "Trøndelag",
@@ -138,6 +153,7 @@ export const stavkirker = [
   },
   {
     id: 14,
+    eksisterer: true,
     navn: "Høyjord",
     kommune: "Sandefjord",
     fylke: "Vestfold og Telemark",
@@ -147,6 +163,7 @@ export const stavkirker = [
   },
   {
     id: 13,
+    eksisterer: true,
     navn: "Heddal",
     kommune: "Notodden",
     fylke: "Vestfold og Telemark",
@@ -156,6 +173,7 @@ export const stavkirker = [
   },
   {
     id: 12,
+    eksisterer: true,
     navn: "Eidsborg",
     kommune: "Tokke",
     fylke: "Vestfold og Telemark",
@@ -165,6 +183,7 @@ export const stavkirker = [
   },
   {
     id: 11,
+    eksisterer: true,
     navn: "Kvernes",
     kommune: "Averøy",
     fylke: "Møre og Romsdal",
@@ -174,6 +193,7 @@ export const stavkirker = [
   },
   {
     id: 10,
+    eksisterer: true,
     navn: "Grip",
     kommune: "Kristiansund",
     fylke: "Møre og Romsdal",
@@ -183,6 +203,7 @@ export const stavkirker = [
   },
   {
     id: 9,
+    eksisterer: true,
     navn: "Øye",
     kommune: "Vang",
     fylke: "Innlandet",
@@ -192,6 +213,7 @@ export const stavkirker = [
   },
   {
     id: 8,
+    eksisterer: true,
     navn: "Ringebu",
     kommune: "Ringebu",
     fylke: "Innlandet",
@@ -201,6 +223,7 @@ export const stavkirker = [
   },
   {
     id: 7,
+    eksisterer: true,
     navn: "Reinli",
     kommune: "Sør-Aurdal",
     fylke: "Innlandet",
@@ -210,6 +233,7 @@ export const stavkirker = [
   },
   {
     id: 6,
+    eksisterer: true,
     navn: "Garmo",
     kommune: "Lom, nå på Maihaugen",
     fylke: "Innlandet",
@@ -219,6 +243,7 @@ export const stavkirker = [
   },
   {
     id: 5,
+    eksisterer: true,
     navn: "Hedalen",
     kommune: "Sør-Aurdal",
     fylke: "Innlandet",
@@ -228,6 +253,7 @@ export const stavkirker = [
   },
   {
     id: 4,
+    eksisterer: true,
     navn: "Hegge",
     kommune: "Øystre Slidre",
     fylke: "Innlandet",
@@ -237,6 +263,7 @@ export const stavkirker = [
   },
   {
     id: 3,
+    eksisterer: true,
     navn: "Høre",
     kommune: "Vang",
     fylke: "Innlandet",
@@ -247,6 +274,7 @@ export const stavkirker = [
 
   {
     id: 2,
+    eksisterer: true,
     navn: "Lom",
     kommune: "Lom",
     fylke: "Innlandet",
@@ -256,6 +284,7 @@ export const stavkirker = [
   },
   {
     id: 1,
+    eksisterer: true,
     navn: "Lomen",
     kommune: "Vestre Slidre",
     fylke: "Innlandet",
