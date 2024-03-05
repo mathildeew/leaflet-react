@@ -3,36 +3,55 @@ import { stavkirker } from "./dataset/stavkirker";
 import LeafletMap from "./components/Map";
 
 export default function App() {
-  const [kirker, setKirker] = useState(stavkirker);
+  const [churches, setChurches] = useState(stavkirker);
   const [searched, setSearched] = useState("");
+  const [selectedCounty, setSelectedCounty] = useState("");
 
-  function onSearch(e) {
+  const onSearch = (e) => {
     setSearched(e.target.value);
-  }
+  };
+
+  const onCountyChange = (e) => {
+    setSelectedCounty(e.target.value);
+  };
 
   useEffect(() => {
-    const filteredKirker = stavkirker.filter((kirke) =>
-      kirke.navn.toLowerCase().includes(searched.toLowerCase())
+    const filteredChurches = stavkirker.filter(
+      (church) =>
+        church.name.toLowerCase().includes(searched.toLowerCase()) &&
+        (!selectedCounty || church.county === selectedCounty)
     );
 
-    setKirker(filteredKirker);
-  }, [searched]);
+    setChurches(filteredChurches);
+  }, [searched, selectedCounty]);
+
+  const countys = [...new Set(stavkirker.map((church) => church.county))];
+  console.log(churches);
 
   return (
     <main>
       <div className="hero">
         <h1>Stavkirker i Norge</h1>
       </div>
-      <section className="container">
-        <input
-          name="search"
-          placeholder="Søk"
-          type="search"
-          onChange={onSearch}
-          value={searched}
-        />
-        <LeafletMap data={kirker} />
-      </section>
+      <div className="container">
+        <div className="controls">
+          <input
+            name="search"
+            placeholder="Søk"
+            type="search"
+            onChange={onSearch}
+            value={searched}
+          />
+          <select onChange={onCountyChange} value={selectedCounty}>
+            <option value="">Velg fylke</option>
+            {countys.map((county) => (
+              <option key={county}>{county}</option>
+            ))}
+          </select>
+        </div>
+
+        <LeafletMap data={churches} />
+      </div>
     </main>
   );
 }
