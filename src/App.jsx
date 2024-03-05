@@ -43,7 +43,7 @@ export default function App() {
             value={searched}
           />
           <select onChange={onCountyChange} value={selectedCounty}>
-            <option value="">Velg fylke</option>
+            <option value="">Alle fylker</option>
             {countys.map((county) => (
               <option key={county}>{county}</option>
             ))}

@@ -19,7 +19,7 @@ export const stavkirker = [
     county: "Møre og Romsdal",
     year: "Ca. 1200",
     function: "",
-    coordinates: [60.69787552275933, 8.94758608035402],
+    coordinates: [62.62417673330599, 7.493759493252635],
   },
   {
     id: 27,
@@ -79,7 +79,7 @@ export const stavkirker = [
     county: "Viken",
     year: "Etter 1111",
     function: "Menighetskirke",
-    coordinates: [59.83100235378919, 6.822762870508922],
+    coordinates: [59.86272469477456, 9.43300069677686],
   },
   {
     id: 21,
@@ -259,7 +259,7 @@ export const stavkirker = [
     county: "Innlandet",
     year: "Etter 1216",
     function: "Menighetskirke",
-    coordinates: [62.390002, 6.578812],
+    coordinates: [61.15781416038389, 9.023743468048156],
   },
   {
     id: 3,
