@@ -11,7 +11,7 @@ import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 export default function LeafletMap({ data }) {
-  const kirker = data;
+  const churches = data;
   const [layers, setLayers] = useState(["Bevarte", "Tapte kirke"]);
 
   const mapOptions = {
@@ -26,68 +26,65 @@ export default function LeafletMap({ data }) {
     height: "500px",
   };
 
-  const churchIcon = new Icon({
-    iconUrl: "https://img.icons8.com/parakeet/48/church.png",
-    iconSize: [35, 35],
-    popupAnchor: [0, -20],
-  });
+  const icons = {
+    churchIcon: {
+      iconUrl: "https://img.icons8.com/parakeet/48/church.png",
+      iconSize: [35, 35],
+      popupAnchor: [0, -20],
+    },
+    burnedIcon: {
+      iconUrl: "https://img.icons8.com/office/16/fire-element--v1.png",
+      iconSize: [35, 35],
+      popupAnchor: [0, -20],
+    },
+  };
 
-  const burnedIcon = new Icon({
-    iconUrl: "https://img.icons8.com/office/16/fire-element--v1.png",
-    iconSize: [35, 35],
-    popupAnchor: [0, -20],
-  });
-
-  const getCategoryIcon = (kategori) => {
-    if (kategori === "Nedbrent") {
-      return burnedIcon;
+  const getCategoryIcon = (category) => {
+    if (category === "Nedbrent") {
+      return new Icon(icons.burnedIcon);
     } else {
-      return churchIcon;
+      return new Icon(icons.churchIcon);
     }
   };
 
-  const kirkerWithIcon = kirker.map((kirke) => {
+  const churchesWithIcon = churches.map((church) => {
     return {
-      ...kirke,
-      icon: getCategoryIcon(kirke.kategori),
+      ...church,
+      icon: getCategoryIcon(church.category),
     };
   });
 
   return (
-    <div>
-      <MapContainer {...mapOptions} style={mapStyle}>
-        <LayersControl position="topright">
-          {layers.map((layerName) => (
-            <LayersControl.Overlay
-              key={layerName}
-              checked={layerName === "Bevarte"}
-              name={layerName}
-            >
-              <LayerGroup>
-                {kirkerWithIcon
-                  .filter(
-                    (kirke) => kirke.eksisterer === (layerName === "Bevarte")
-                  )
-                  .map((kirke) => (
-                    <Marker
-                      key={kirke.id}
-                      position={kirke.koordinater}
-                      icon={kirke.icon}
-                    >
-                      <Popup>
-                        <h2>{kirke.navn} stavkirke</h2>
-                        <p>Byggeår: {kirke.byggeår}</p>
-                        <p>Kommune: {kirke.kommune}</p>
-                        {kirke.funksjon && <p>{kirke.funksjon}</p>}
-                      </Popup>
-                    </Marker>
-                  ))}
-              </LayerGroup>
-            </LayersControl.Overlay>
-          ))}
-        </LayersControl>
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      </MapContainer>
-    </div>
+    <MapContainer {...mapOptions} style={mapStyle}>
+      <LayersControl position="topright">
+        {layers.map((layerName) => (
+          <LayersControl.Overlay
+            key={layerName}
+            checked={layerName === "Bevarte"}
+            name={layerName}
+          >
+            <LayerGroup>
+              {churchesWithIcon
+                .filter((church) => church.exist === (layerName === "Bevarte"))
+                .map((church) => (
+                  <Marker
+                    key={church.id}
+                    position={church.coordinates}
+                    icon={church.icon}
+                  >
+                    <Popup>
+                      <h2>{church.name} stavkirke</h2>
+                      <p>Byggeår: {church.year}</p>
+                      <p>Kommune: {church.commune}</p>
+                      {church.function && <p>{church.function}</p>}
+                    </Popup>
+                  </Marker>
+                ))}
+            </LayerGroup>
+          </LayersControl.Overlay>
+        ))}
+      </LayersControl>
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    </MapContainer>
   );
 }
