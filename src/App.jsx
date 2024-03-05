@@ -25,8 +25,7 @@ export default function App() {
     setChurches(filteredChurches);
   }, [searched, selectedCounty]);
 
-  const countys = [...new Set(stavkirker.map((church) => church.county))];
-  console.log(churches);
+  const counties = [...new Set(stavkirker.map((church) => church.county))];
 
   return (
     <main>
@@ -44,7 +43,7 @@ export default function App() {
           />
           <select onChange={onCountyChange} value={selectedCounty}>
             <option value="">Alle fylker</option>
-            {countys.map((county) => (
+            {counties.map((county) => (
               <option key={county}>{county}</option>
             ))}
           </select>
