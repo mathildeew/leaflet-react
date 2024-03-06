@@ -1,1 +1,1 @@
-# Testing av leaflet + Riksantikvaren API
+# Leaflet + React
